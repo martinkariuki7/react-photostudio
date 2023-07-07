@@ -3,8 +3,8 @@ import { DatabankInterface } from "../databank";
 
 interface Props {
   gallery: DatabankInterface["gallery"];
-  cartItems: DatabankInterface[];
-  addToCart: (newItems: DatabankInterface[]) => JSX.Element;
+  cartItems: DatabankInterface["gallery"];
+  addToCart: (newItems: DatabankInterface["gallery"]) => void;
   currentProfile: DatabankInterface;
 }
 

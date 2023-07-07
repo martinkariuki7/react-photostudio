@@ -292,7 +292,8 @@ aside .container .profile_intro {
 /* Shopping cart */
 .cart-items {
   list-style-type: none;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 100px);
   gap: 1em;
   padding: 0;
 }

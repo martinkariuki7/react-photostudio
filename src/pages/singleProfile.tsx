@@ -9,8 +9,8 @@ import Gallery from "../components/gallery";
 import { DatabankInterface } from "../databank";
 
 interface Props {
-  cartItems: DatabankInterface[];
-  addToCart: (newItems: DatabankInterface[]) => JSX.Element;
+  cartItems: DatabankInterface["gallery"];
+  addToCart: (newItems: DatabankInterface["gallery"]) => void;
 }
 
 const SingleProfile = ({ cartItems, addToCart }: Props) => {

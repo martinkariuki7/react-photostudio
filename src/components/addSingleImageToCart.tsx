@@ -2,10 +2,10 @@ import { handleAddToCart } from "../utils/addToCart";
 import { DatabankInterface } from "../databank";
 
 interface Props {
-  cartItems: DatabankInterface[];
+  cartItems: DatabankInterface["gallery"];
   id: string;
   src: string;
-  addToCart: (newItems: DatabankInterface[]) => JSX.Element;
+  addToCart: (newItems: DatabankInterface["gallery"]) => void;
 }
 
 const AddSingleImageToCart = ({ cartItems, id, src, addToCart }: Props) => {

@@ -2,9 +2,9 @@ import { handleAddToCart } from "../utils/addToCart";
 import { DatabankInterface } from "../databank";
 
 interface Props {
-  cartItems: DatabankInterface[];
+  cartItems: DatabankInterface["gallery"];
   currentProfile: DatabankInterface;
-  addToCart: (newItems: DatabankInterface[]) => JSX.Element;
+  addToCart: (newItems: DatabankInterface["gallery"]) => void;
 }
 
 const BuyAlbumButton = ({ cartItems, currentProfile, addToCart }: Props) => {

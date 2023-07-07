@@ -14,16 +14,16 @@ import ProfileContext from "./context/profileContext";
 import "./App.css";
 
 function App() {
-  const [profiles, setProfiles] = useState<DatabankInterface[]>(databank);
+  const [profiles] = useState<DatabankInterface[]>(databank);
   const profilesCount = profiles.length;
 
-  const [cartItems, setCartItems] = useState<DatabankInterface[]>([]);
+  const [cartItems, setCartItems] = useState<DatabankInterface["gallery"]>([]);
 
-  const addToCart = (newItems: DatabankInterface[]) => {
+  const addToCart = (newItems: DatabankInterface["gallery"]) => {
     setCartItems([...cartItems, ...newItems]);
   };
 
-  const removeFromCart = (newItems: DatabankInterface[]) => {
+  const removeFromCart = (newItems: DatabankInterface["gallery"]) => {
     setCartItems([...newItems]);
   };
 

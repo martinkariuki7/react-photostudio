@@ -3,7 +3,7 @@ import { DatabankInterface } from "../databank";
 
 interface Props {
   cartItems: DatabankInterface["gallery"];
-  removeFromCart: (newItems: DatabankInterface["gallery"]) => JSX.Element;
+  removeFromCart: (newItems: DatabankInterface["gallery"]) => void;
 }
 
 const ShoppingCart = ({ cartItems, removeFromCart }: Props) => {
