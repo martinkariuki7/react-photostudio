@@ -1,18 +1,27 @@
 import React from "react";
 import gsap from "gsap";
 import isValidEmail from "../utils/validateEmail";
+import { DatabankInterface } from "../databank";
 
-const ShareAlbumForm = ({ currentProfile }) => {
+interface Props {
+  currentProfile: DatabankInterface;
+}
+
+const ShareAlbumForm = ({ currentProfile }: Props) => {
   const { firstName, lastName } = currentProfile;
 
-  function handleSubmit(e) {
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     // Prevent the browser from reloading the page
     e.preventDefault();
 
     // Read the form data
-    const form = e.target;
+    const form = e.target as HTMLFormElement;
     const formData = new FormData(form);
-    const formJson = Object.fromEntries(formData.entries());
+    const formJson: Record<string, string> = {};
+
+    formData.forEach((value, key) => {
+      formJson[key] = String(value);
+    });
     const emailAddress = formJson.email.trim();
 
     if (isValidEmail(emailAddress)) {

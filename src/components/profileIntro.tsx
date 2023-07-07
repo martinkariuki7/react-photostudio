@@ -1,10 +1,14 @@
-import React from "react";
+import { DatabankInterface } from "../databank";
 
-const ProfileIntro = ({ currentProfile }) => {
+interface Props {
+  currentProfile: DatabankInterface;
+}
+
+const ProfileIntro = ({ currentProfile }: Props) => {
   const { firstName, lastName, dateOfShoot, location } = currentProfile;
 
   return (
-    <React.Fragment>
+    <>
       <h1>{`${firstName} ${lastName}`}</h1>
       <div className="profile_details_wrapper">
         <ul id="profile_details" className="profile_details">
@@ -24,7 +28,7 @@ const ProfileIntro = ({ currentProfile }) => {
           får en rabattkode som gir deg 30% rabatt hos PhotoStudio.
         </p>
       </div>
-    </React.Fragment>
+    </>
   );
 };
 

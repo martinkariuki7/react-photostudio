@@ -1,6 +1,8 @@
-import React from "react";
+interface Props {
+  profilesCount: number;
+}
 
-const IntroMessage = ({ profilesCount }) => {
+const IntroMessage = ({ profilesCount }: Props) => {
   return (
     <section className="home_intro">
       <p id="homeIntroMessage">

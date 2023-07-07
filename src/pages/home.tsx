@@ -1,8 +1,13 @@
-import React, { Component } from "react";
 import IntroMessage from "../components/introMessage";
 import Profiles from "../components/profiles";
+import { DatabankInterface } from "../databank";
 
-const Home = ({ profilesCount, profiles }) => {
+interface Props {
+  profilesCount: number;
+  profiles: DatabankInterface[];
+}
+
+const Home = ({ profilesCount, profiles }: Props) => {
   return (
     <main>
       <IntroMessage profilesCount={profilesCount} />

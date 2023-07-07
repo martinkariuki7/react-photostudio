@@ -1,7 +1,10 @@
-import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
-const SiteHeader = ({ totalItems }) => {
+interface Props {
+  totalItems: number;
+}
+
+const SiteHeader = ({ totalItems }: Props) => {
   return (
     <header id="app-header" className="app_header">
       <Link to="/" className="site_branding">

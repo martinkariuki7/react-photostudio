@@ -1,7 +1,13 @@
-import React from "react";
 import { handleAddToCart } from "../utils/addToCart";
+import { DatabankInterface } from "../databank";
 
-const BuyAlbumButton = ({ cartItems, currentProfile, addToCart }) => {
+interface Props {
+  cartItems: DatabankInterface[];
+  currentProfile: DatabankInterface;
+  addToCart: (newItems: DatabankInterface[]) => JSX.Element;
+}
+
+const BuyAlbumButton = ({ cartItems, currentProfile, addToCart }: Props) => {
   return (
     <button
       onClick={() =>

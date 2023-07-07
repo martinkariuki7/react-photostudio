@@ -1,4 +1,22 @@
-export default [
+export interface DatabankInterface {
+  id: string;
+  firstName: string;
+  lastName: string;
+  featuredImage: string;
+  dateOfShoot: string;
+  location: string;
+  gallery: {
+    id: string;
+    src: string;
+  }[];
+}
+
+export interface GalleryInterface {
+  id: string;
+  src: string;
+}
+
+const databank = [
   {
     id: "m-01",
     firstName: "John",
@@ -36,3 +54,5 @@ export default [
     ],
   },
 ];
+
+export default databank;

@@ -1,7 +1,12 @@
-import React from "react";
+import { DatabankInterface } from "../databank";
+
+interface Props {
+  profiles: DatabankInterface[];
+}
+
 import { Link } from "react-router-dom";
 
-const Profiles = ({ profiles }) => {
+const Profiles = ({ profiles }: Props) => {
   return (
     <ul className="profiles_wrapper">
       {profiles.map((profile) => (

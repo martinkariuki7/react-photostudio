@@ -1,7 +1,11 @@
-import React from "react";
 import { toast } from "react-toastify";
+import { DatabankInterface } from "../databank";
 
-export const handleAddToCart = (oldArray, newArray, addToCart) => {
+export const handleAddToCart = (
+  oldArray: DatabankInterface[],
+  newArray: DatabankInterface[],
+  addToCart: (arg: DatabankInterface[]) => void
+): void => {
   let duplicateCount = 0;
   const filteredArray = newArray.filter((obj1) => {
     if (oldArray.some((obj2) => obj2.id === obj1.id)) {

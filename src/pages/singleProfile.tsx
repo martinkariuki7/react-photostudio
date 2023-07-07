@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import ProfileContext from "../context/profileContext";
 import { useParams } from "react-router-dom";
 import ShareAlbumForm from "../components/shareAlbumForm";
@@ -6,11 +6,30 @@ import ShareAlbumButton from "../components/shareAlbumButton";
 import ProfileIntro from "../components/profileIntro";
 import BuyAlbumButton from "../components/buyAlbumButton";
 import Gallery from "../components/gallery";
+import { DatabankInterface } from "../databank";
 
-const SingleProfile = ({ cartItems, addToCart }) => {
+interface Props {
+  cartItems: DatabankInterface[];
+  addToCart: (newItems: DatabankInterface[]) => JSX.Element;
+}
+
+const SingleProfile = ({ cartItems, addToCart }: Props) => {
   const { id: profileId } = useParams();
   const profiles = useContext(ProfileContext);
-  const currentProfile = profiles.find((prod) => prod.id === profileId);
+
+  if (!profiles) {
+    // Handle the case when profiles is undefined
+    return <div>Loading...</div>;
+  }
+
+  const currentProfile: DatabankInterface | undefined = profiles.find(
+    (prod) => prod.id === profileId
+  );
+
+  if (!currentProfile) {
+    // Handle the case when currentProfile is undefined
+    return <div>Loading...</div>;
+  }
 
   return (
     <div>

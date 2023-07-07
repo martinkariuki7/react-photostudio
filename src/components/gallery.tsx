@@ -1,7 +1,14 @@
-import React from "react";
 import AddSingleImageToCart from "./addSingleImageToCart";
+import { DatabankInterface } from "../databank";
 
-const Gallery = ({ gallery, cartItems, addToCart, currentProfile }) => {
+interface Props {
+  gallery: DatabankInterface["gallery"];
+  cartItems: DatabankInterface[];
+  addToCart: (newItems: DatabankInterface[]) => JSX.Element;
+  currentProfile: DatabankInterface;
+}
+
+const Gallery = ({ gallery, cartItems, addToCart, currentProfile }: Props) => {
   const { firstName, lastName } = currentProfile;
 
   return (

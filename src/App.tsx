@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import databank from "./components/databank";
+import databank from "./databank";
+import { DatabankInterface } from "./databank";
 import SiteHeader from "./components/header";
 import SiteFooter from "./components/footer";
 import ShoppingCart from "./pages/shoppingCart";
@@ -13,16 +14,16 @@ import ProfileContext from "./context/profileContext";
 import "./App.css";
 
 function App() {
-  const [profiles, setProfiles] = useState(databank);
+  const [profiles, setProfiles] = useState<DatabankInterface[]>(databank);
   const profilesCount = profiles.length;
 
-  const [cartItems, setCartItems] = useState([]);
+  const [cartItems, setCartItems] = useState<DatabankInterface[]>([]);
 
-  const addToCart = (newItems) => {
+  const addToCart = (newItems: DatabankInterface[]) => {
     setCartItems([...cartItems, ...newItems]);
   };
 
-  const removeFromCart = (newItems) => {
+  const removeFromCart = (newItems: DatabankInterface[]) => {
     setCartItems([...newItems]);
   };
 

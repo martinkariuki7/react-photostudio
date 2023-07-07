@@ -1,7 +1,12 @@
-import React from "react";
+import { DatabankInterface } from "../databank";
 
-const Cart = ({ cartItems, removeFromCart }) => {
-  const handleRemoveFromCart = (image) => {
+interface Props {
+  cartItems: DatabankInterface["gallery"];
+  removeFromCart: (newItems: DatabankInterface["gallery"]) => JSX.Element;
+}
+
+const Cart = ({ cartItems, removeFromCart }: Props) => {
+  const handleRemoveFromCart = (image: string) => {
     const newItems = cartItems.filter((item) => item.id !== image);
     removeFromCart([...newItems]);
   };
