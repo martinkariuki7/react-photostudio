@@ -18,13 +18,13 @@ const Cart = ({ cartItems, removeFromCart }: Props) => {
         {cartItems.map((item) => (
           <li key={item.id}>
             <img src={item.src} alt={item.id} />
-            <span
+            <button
               onClick={() => {
                 handleRemoveFromCart(item.id);
               }}
             >
-              x
-            </span>
+              <small>X </small>
+            </button>
           </li>
         ))}
       </ul>

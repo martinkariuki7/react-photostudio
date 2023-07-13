@@ -19,8 +19,6 @@ body,
 .root {
   margin: 0;
   padding: 0;
-  width: 100%;
-  min-height: 100vh;
   background-color: var(--black);
   color: var(--white);
   font-family: var(--body-font);
@@ -28,6 +26,11 @@ body,
 
 .root {
   padding: 4em 6em;
+}
+
+.App {
+  padding: 3rem;
+  background-color: black;
 }
 
 a,
@@ -103,7 +106,6 @@ button.magnify {
 
 /** App Header **/
 header.app_header {
-  width: 100%;
   display: flex;
   justify-content: space-between;
 }
@@ -302,7 +304,8 @@ aside .container .profile_intro {
   display: flex;
 }
 
-.cart-wrapper span {
+.cart-wrapper button {
+  position: absolute;
   display: inline-block;
   margin-right: 5px;
 }
@@ -311,10 +314,10 @@ aside .container .profile_intro {
   position: relative;
 }
 
-.cart-items span {
+.cart-items button {
   position: absolute;
   inset: -10px -5px auto auto;
-  background-color: white;
+  background-color: #ccc;
   color: black;
   line-height: 0;
   padding: 7px;
